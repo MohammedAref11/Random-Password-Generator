@@ -46,6 +46,107 @@ h1, h2, h3, h4, h5, h6 {
     font-style: normal;
 }
 
+:root { 
+  /* Main colors */
+  --body-bg: #1C1C1C;
+  --passwords-bg: #263548;
+  --green: #4ADF87; 
+  --subheading: #D3D2D7; 
+
+  /* Dark theme */
+  --card-bg-dark: #202938; 
+  --header-dark: #FEFEFE; 
+  --copy-icon-dark: #63E6BE; 
+
+  /* Light theme */
+  --card-bg-light: #ECFDF5; 
+  --header-light: #2B283A;
+  --copy-icon-light: #1F2938;
+}
+
 body { 
     font-family: "karla-Variable";
+    background-color: var(--body-bg);
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.container { 
+  background-color: var(--card-bg-dark);
+  padding: 2rem;
+  width: 100%;
+  max-width: 450px;
+}
+
+.header-text { 
+  color: var(--header-dark);
+  font-size: 2.5rem;
+}
+
+.highlight-text { 
+  color: var(--green) ;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.subheading-text { 
+  font-size: 1.2rem;
+  color: var(--subheading);
+  font-weight: 400;
+  margin-bottom: .5rem;
+}
+
+.password-length { 
+  color: var(--green);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.password-length-input { 
+  appearance: none;
+  background-color: var(--green);
+  cursor:grab;
+  border-radius: 999px;
+  display: block;
+  width: 150px;
+  margin-bottom: 1rem;
+}
+
+.password-length-input:active { 
+  cursor: grabbing;
+}
+
+.password-length-input::-webkit-slider-thumb { 
+  appearance: none;
+  background-color: #1F2938;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px; 
+}
+
+.generate-password-btn { 
+  color: white;
+  border: none;
+  padding: .5rem .8rem;
+  background-color: var(--green);
+  font-size: 18px;
+  border-radius: 4px;
+  margin-bottom: 1.5rem; 
+}
+
+.generate-password-btn:hover { 
+  cursor: pointer;
+}
+
+.passwords-con { 
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.password { 
+  
 }

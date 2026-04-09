@@ -9,8 +9,25 @@
     <script defer src="main.js"></script>
 </head>
 <body>
-
-    <h1>hello world</h1>
-    
+    <main class="container">
+        <button>Switch Theme</button>
+        <h1 class="header-text">Generate a</h1>
+        <h2 class="highlight-text">random password</h2>
+        <p class="subheading-text">Never use a insecure password again.</p>
+        <p class="password-length">Length: <span id="length-num">0</span></p>
+        <input type="range" class="password-length-input" id="passwordLength" min="1" max="20" >
+        <button class="generate-password-btn">Generate passwords</button>
+        <hr>
+        <div class="passwords-con">
+            <div class="password">
+                <p class="password-text">afj;ajf;ajf;f dj</p>
+                <img src="./images/copy-icon-green.svg" alt="copy-icon">
+            </div>
+            <div class="password">
+                <p class="password-text">afj;ajf;ajf;f dj</p>
+                <img src="./images/copy-icon-green.svg" alt="copy-icon">
+            </div>
+        </div>
+    </main>
 </body>
 </html>
