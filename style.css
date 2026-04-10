@@ -77,7 +77,7 @@ body {
   background-color: var(--card-bg-dark);
   padding: 4rem 2.4rem;
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
 }
 
 .header-text { 
@@ -152,6 +152,7 @@ body {
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+  padding: 1rem;
 }
 
 .password-text { 
