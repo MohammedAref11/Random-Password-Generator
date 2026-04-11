@@ -52,16 +52,42 @@ h1, h2, h3, h4, h5, h6 {
   --passwords-bg: #263548;
   --green: #4ADF87; 
   --subheading: #D3D2D7; 
-
   /* Dark theme */
   --card-bg-dark: #202938; 
   --header-dark: #FEFEFE; 
   --copy-icon-dark: #63E6BE; 
-
   /* Light theme */
   --card-bg-light: #ECFDF5; 
   --header-light: #2B283A;
   --copy-icon-light: #1F2938;
+
+  --card-background: var(--card-bg-dark);
+  --header-bg: var(--header-dark); 
+  --sub-heading-text: var(--subheading);
+  --copy-icon: var(--copy-icon-dark);  
+  --pass-length: var(--green); 
+}
+
+.light-mode { 
+  /* Main colors */
+  --body-bg: #1C1C1C;
+  --passwords-bg: #263548;
+  --green: #4ADF87; 
+  --subheading: #D3D2D7; 
+    /* Dark theme */
+  --card-bg-dark: #202938; 
+  --header-dark: #FEFEFE; 
+  --copy-icon-dark: #63E6BE; 
+  /* Light theme */
+  --card-bg-light: #ECFDF5; 
+  --header-light: #2B283A;
+  --copy-icon-light: #1F2938;
+
+  --card-background: var(--card-bg-light);
+  --header-bg: var(--header-light);
+  --sub-heading-text: var(--body-bg);
+  --copy-icon: var(--copy-icon-light);
+  --pass-length: var(--passwords-bg);
 }
 
 body { 
@@ -74,14 +100,30 @@ body {
 }
 
 .container { 
-  background-color: var(--card-bg-dark);
-  padding: 4rem 2.4rem;
+  background-color: var(--card-background);
+  padding: 3rem 2.4rem;
   width: 100%;
   max-width: 500px;
 }
 
+.switch-theme-btn { 
+  background-color: var(--green);
+  color: var(--card-bg-dark);
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: .5rem 1rem;
+  margin-bottom: .5rem;
+  border-radius: 4px;
+}
+
+.switch-theme-btn:hover { 
+  cursor: pointer;
+  background-color: #2ece71;
+}
+
 .header-text { 
-  color: var(--header-dark);
+  color: var(--header-bg);
   font-size: 2.5rem;
 }
 
@@ -93,25 +135,24 @@ body {
 
 .subheading-text { 
   font-size: 1.2rem;
-  color: var(--subheading);
-  font-weight: 400;
+  color: var(--sub-heading-text);
   margin-bottom: .5rem;
 }
 
 .password-length { 
-  color: var(--green);
+  color: var(--pass-length);
   margin-bottom: 1rem;
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .password-length-input { 
   appearance: none;
   background-color: var(--green);
   cursor:grab;
-  border-radius: 999px;
-  display: block;
   width: 150px;
+  border-radius: 90px;
+  display: block;
   margin-bottom: 1rem;
 }
 
@@ -157,4 +198,21 @@ body {
 
 .password-text { 
   color: var(--green);
+  background-color: var(--passwords-bg);
+  padding: .8rem 2.5rem;
+  border-radius: 8px;
 }
+
+
+.copy-i-con { 
+  transition: 350ms all ease-out;
+}
+.copy-i-con:hover { 
+  cursor: pointer;
+  transform: translateY(-4px);
+}
+
+.copy-icon { 
+  fill: var(--copy-icon);
+}
+
