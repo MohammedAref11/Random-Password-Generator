@@ -101,9 +101,9 @@ body {
 
 .container { 
   background-color: var(--card-background);
-  padding: 3rem 2.4rem;
+  padding: 2.5rem 2.4rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 580px;
 }
 
 .switch-theme-btn { 
@@ -185,12 +185,13 @@ body {
 .passwords-con { 
   margin-top: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .password { 
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
   padding: 1rem;
@@ -199,7 +200,7 @@ body {
 .password-text { 
   color: var(--green);
   background-color: var(--passwords-bg);
-  padding: .8rem 2.5rem;
+  padding: .8rem 2rem;
   border-radius: 8px;
 }
 
@@ -215,3 +216,11 @@ body {
   fill: var(--copy-icon);
 }
 
+@media(max-width: 500px) { 
+  .passwords-con { 
+    flex-direction: column;
+  }
+  .password { 
+    flex-direction: row;
+  }
+}
