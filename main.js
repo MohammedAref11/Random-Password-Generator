@@ -15,7 +15,7 @@ let passLength = 0;
 function generateRandomPass() { 
 
     const chars = "qwertyuiopasdfghjklzxcvbnm!@#$%^&*<>?1234567890";
-    randomPass = "";
+    let randomPass = "";
 
     for (let i = 0; i < passLength; i++) { 
         const randomIndex = Math.floor(Math.random() * chars.length); 
