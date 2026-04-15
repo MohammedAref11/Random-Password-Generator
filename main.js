@@ -6,6 +6,8 @@ const pass1 = document.querySelector(".password-1");
 const pass2 = document.querySelector(".password-2");
 const copyEl1 = document.getElementById("copyEl1");
 const copyEl2 = document.getElementById("copyEl2");
+const copiedMessage1 = document.getElementById("copyMessage1");
+const copiedMessage2 = document.getElementById("copyMessage2");
 let checkLight = localStorage.getItem("lightMode");
 
 let passLength = 0;
@@ -17,19 +19,19 @@ function generateRandomPass() {
 
     for (let i = 0; i < passLength; i++) { 
         const randomIndex = Math.floor(Math.random() * chars.length); 
-        randomPass += chars[randomIndex]
+        randomPass += chars[randomIndex]; 
     } 
 
     return randomPass;
 }
-
-const test = "hello"; 
 
 generatePassBtn.addEventListener('click', () =>  { 
     const password1 = generateRandomPass();
     const password2 = generateRandomPass();
     pass1.textContent = password1; 
     pass2.textContent = password2; 
+    copiedMessage1.textContent = ""; 
+    copiedMessage2.textContent = "";
 })
 
 lengthNum.textContent = rangeInput.value; 
@@ -40,14 +42,22 @@ rangeInput.addEventListener('input', (e) => {
     lengthNum.textContent = passLength; 
 })
 
-copyEl1.addEventListener('click', async () => { 
-    try { 
-        await navigation.clipboard.writeText(test)
-        console.log("text copied")
+async function CopyText(element, message) { 
+    
+    if (element.textContent.length === 0) { 
+        message.textContent = "Generate a password"
+    } else { 
+           try { 
+        await navigator.clipboard.writeText(element.textContent); 
+        message.textContent = "Text Copied"; 
     } catch(error) { 
-        console.log(error.name, error.message)
+        message.textContent = "unable to copy text";
     }
-})
+}
+}
+
+copyEl1.addEventListener('click', () => CopyText(pass1, copiedMessage1))
+copyEl2.addEventListener('click', () => CopyText(pass2, copiedMessage2))
 
 //* Switch Theme
 

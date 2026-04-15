@@ -66,6 +66,7 @@ h1, h2, h3, h4, h5, h6 {
   --sub-heading-text: var(--subheading);
   --copy-icon: var(--copy-icon-dark);  
   --pass-length: var(--green); 
+  --copied-message: var(--green); 
 }
 
 .light-mode { 
@@ -88,6 +89,7 @@ h1, h2, h3, h4, h5, h6 {
   --sub-heading-text: var(--body-bg);
   --copy-icon: var(--copy-icon-light);
   --pass-length: var(--passwords-bg);
+  --copied-message: var(--body-bg); 
 }
 
 body { 
@@ -214,6 +216,10 @@ body {
 
 .copy-icon { 
   fill: var(--copy-icon);
+}
+
+.copy-message { 
+  color: var(--copied-message);
 }
 
 @media(max-width: 500px) { 
