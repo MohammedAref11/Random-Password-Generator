@@ -72,7 +72,6 @@ h1, h2, h3, h4, h5, h6 {
 .light-mode { 
   /* Main colors */
   --body-bg: #1C1C1C;
-  --passwords-bg: #263548;
   --green: #4ADF87; 
   --subheading: #D3D2D7; 
     /* Dark theme */
