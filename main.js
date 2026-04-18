@@ -10,7 +10,7 @@ const copiedMessage1 = document.getElementById("copyMessage1");
 const copiedMessage2 = document.getElementById("copyMessage2");
 let checkLight = localStorage.getItem("lightMode");
 
-let passLength = 0;
+let passLength = 4;
 
 function generateRandomPass() { 
 
@@ -34,8 +34,9 @@ generatePassBtn.addEventListener('click', () =>  {
     copiedMessage2.textContent = "";
 })
 
-lengthNum.textContent = rangeInput.value; 
 passLength = rangeInput.value;
+lengthNum.textContent = rangeInput.value; 
+
 
 rangeInput.addEventListener('input', (e) => { 
     passLength = e.target.value; 
@@ -52,8 +53,8 @@ async function CopyText(element, message) {
         message.textContent = "Text Copied"; 
     } catch(error) { 
         message.textContent = "unable to copy text";
+        }
     }
-}
 }
 
 copyEl1.addEventListener('click', () => CopyText(pass1, copiedMessage1))
